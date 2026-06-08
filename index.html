@@ -375,7 +375,7 @@
         <!-- Dropdown Suggestion Area -->
         <div class="dropdown-container">
             <select id="planDropdown" onchange="fillFromDropdown()">
-                <option value="" disabled selected>Choose a cozy activity...</option>
+                <option value="" disabled selected>Choose our plans?</option>
                 <!-- Options populated by JS -->
             </select>
         </div>
@@ -423,7 +423,6 @@
         const mm = String(now.getMinutes()).padStart(2, '0');
         document.getElementById('timeInput').value = `${hh}:${mm}`;
 
-        let plans = JSON.parse(localStorage.getItem('sunflowerTomorrowPlans') || '[]');
 
         function startPlanner() {
             document.getElementById('introModal').style.opacity = '0';
@@ -502,12 +501,10 @@
             }
 
           console.log(time,text)
-          fetch("/xd",{
+          fetch("/add",{
             method: "POST",
             body: JSON.stringify({ time, text }),
           });
-            plans.push({ time, text });
-            localStorage.setItem('sunflowerTomorrowPlans', JSON.stringify(plans));
 
             
             document.getElementById('planInput').value = '';
@@ -516,17 +513,17 @@
         }
 
         function removePlan(index) {
-            plans.splice(index, 1);
-            localStorage.setItem('sunflowerTomorrowPlans', JSON.stringify(plans));
             renderPlans();
         }
 
         function clearAll() {
             if (confirm("Clear everything for tomorrow?")) {
-                plans = [];
-                localStorage.removeItem('sunflowerTomorrowPlans');
                 renderPlans();
             }
+          fetch("/clear",{
+            method: "POST",
+            body: "do it nigga",
+          })
         }
 
         // Initialize layout styles
