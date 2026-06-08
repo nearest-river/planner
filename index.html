@@ -501,8 +501,14 @@
                 return;
             }
 
+          console.log(time,text)
+          fetch("/xd",{
+            method: "POST",
+            body: JSON.stringify({ time, text }),
+          });
             plans.push({ time, text });
             localStorage.setItem('sunflowerTomorrowPlans', JSON.stringify(plans));
+
             
             document.getElementById('planInput').value = '';
             document.getElementById('planInput').focus();
