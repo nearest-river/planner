@@ -39,14 +39,17 @@ export default function Where({ searchParams }: WhereProps) {
 
   const router=useRouter();
   async function submit() {
-    if(!meetupPlace || !nextPlace) {
+    const { time, date }=await searchParams;
+
+    if(!date || !time || !meetupPlace || !nextPlace) {
       return;
     }
 
     const payload={
-      meetupPlace,
+      date,
+      time,
       nextPlace,
-      ...(await searchParams)
+      meetupPlace,
     };
 
     try {

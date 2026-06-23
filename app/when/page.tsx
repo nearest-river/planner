@@ -19,7 +19,7 @@ export default function When() {
 
     const params=new URLSearchParams({
       time,
-      date: date.toISOString(),
+      date: date.toLocaleDateString(),
     }).toString();
 
     router.push(`/where?${params}`);
