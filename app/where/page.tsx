@@ -42,6 +42,7 @@ export default function Where({ searchParams }: WhereProps) {
     const { time, date }=await searchParams;
 
     if(!date || !time || !meetupPlace || !nextPlace) {
+      console.log(date,time,meetupPlace,nextPlace);
       return;
     }
 
