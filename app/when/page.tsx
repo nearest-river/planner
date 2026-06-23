@@ -13,13 +13,14 @@ export default function When() {
   const router=useRouter();
 
   function redirect() {
-    if(!date || !time) {
+    const date_str=date?.toLocaleDateString();
+    if(!date_str || !time) {
       return;
     }
 
     const params=new URLSearchParams({
       time,
-      date: date.toLocaleDateString(),
+      date: date_str,
     }).toString();
 
     router.push(`/where?${params}`);
