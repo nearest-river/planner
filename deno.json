@@ -9,5 +9,8 @@
   ],
   "imports": {
     "@components": "./components"
+  },
+  "tasks": {
+    "build": "next build"
   }
 }
