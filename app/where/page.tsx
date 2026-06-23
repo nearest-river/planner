@@ -1,4 +1,3 @@
-
 "use client";
 
 
@@ -8,10 +7,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "../../components/ui/button.tsx";
 import { PlacePicker } from "../../components/place_picker.tsx";
 
-
-export interface WhereProps {
-  searchParams: Promise<{ date?: string, time?: string }>;
-}
 
 const SUGGESTED_PLACES=[
   "Lake View Park",
@@ -33,16 +28,18 @@ const MEETUP_PLACES=[
 ];
 
 
-export default function Where({ searchParams }: WhereProps) {
+export default function Where() {
   const [meetupPlace,setMeetupPlace]=React.useState<string>();
   const [nextPlace,setNextPlace]=React.useState<string>();
 
   const router=useRouter();
   async function submit() {
-    const { time, date }=await searchParams;
+    const date=sessionStorage.getItem("date");
+    const time=sessionStorage.getItem("time");
+
+    console.log(date,time,meetupPlace,nextPlace);
 
     if(!date || !time || !meetupPlace || !nextPlace) {
-      console.log(date,time,meetupPlace,nextPlace);
       return;
     }
 

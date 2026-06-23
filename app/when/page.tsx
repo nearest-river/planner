@@ -18,12 +18,10 @@ export default function When() {
       return;
     }
 
-    const params=new URLSearchParams({
-      time,
-      date: date_str,
-    }).toString();
+    sessionStorage.setItem("date",date_str);
+    sessionStorage.setItem("time",time);
 
-    router.push(`/where?${params}`);
+    router.push(`/where`);
   }
 
   return (
