@@ -1,0 +1,13 @@
+<svg className="sunflower-top" style={style} viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <circle id="petal" cx="200" cy="100" r="60"/>
+      </defs>
+      <g fill="gold">
+        <use href="#petal"/>
+        <use href="#petal" transform="rotate(72 200 200)"/>
+        <use href="#petal" transform="rotate(144 200 200)"/>
+        <use href="#petal" transform="rotate(216 200 200)"/>
+        <use href="#petal" transform="rotate(288 200 200)"/>
+      </g>
+      <circle cx="200" cy="200" r="65" fill="#78350f"/>
+    </svg>

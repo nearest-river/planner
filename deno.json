@@ -1,5 +1,13 @@
 {
-  "tasks": {
-    "dev": "deno run --watch --allow-net --allow-read --unstable-kv main.ts"
+  "unstable": [
+    "kv",
+    "detect-cjs",
+    "node-globals",
+    "unsafe-proto",
+    "sloppy-imports",
+    "bare-node-builtins"
+  ],
+  "imports": {
+    "@components": "./components"
   }
 }
