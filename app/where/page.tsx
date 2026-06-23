@@ -50,7 +50,7 @@ export default function Where({ searchParams }: WhereProps) {
     };
 
     try {
-      const res=await fetch("/api/plans",{
+      const res=await fetch("https://planner-backend.nearest-river.deno.net",{
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
@@ -64,7 +64,7 @@ export default function Where({ searchParams }: WhereProps) {
 
       router.push("/xd");
     } catch(err) {
-      console.error('Error:',err);
+      console.error('xd: Error:',err);
     }
   }
 

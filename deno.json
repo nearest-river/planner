@@ -9,5 +9,9 @@
   ],
   "imports": {
     "@components": "./components"
+  },
+  "deploy": {
+    "project": "planner",
+    "exclude": ["**/node_modules"]
   }
 }
