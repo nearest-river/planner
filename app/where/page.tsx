@@ -9,6 +9,7 @@ import { PlacePicker } from "../../components/place_picker.tsx";
 
 
 const SUGGESTED_PLACES=[
+  "Science City",
   "Lake View Park",
   "Differential Eqations Date 😭",
   "Random Walk",
